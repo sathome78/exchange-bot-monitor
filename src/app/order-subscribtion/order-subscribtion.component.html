@@ -1,0 +1,56 @@
+
+<div class="col width">
+  <div class="row mt-4 mb-4">
+    <div class="">
+      Select currency pair
+      <ngx-select-dropdown
+        style="width: 200px"
+        [config]="config"
+        [options]="currencyPairs"
+        [(ngModel)]="selectedPair"
+        (change)="select()"
+        name="currencyPair"
+        [multiple]="false"
+      >
+      </ngx-select-dropdown>
+    </div>
+  </div>
+  <div class="row mt-4 mb-4" *ngIf="selectedPair && selectedPair.url_symbol">
+    <div class="" >
+      <div>
+        Try to connect to socket
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="connect()"
+      >
+        Connect
+      </button>
+    </div>
+  </div>
+  <div class="row mt-4 mb-4">
+    <div class="text-success w" *ngIf="successBody">
+      <div>
+        <h4>
+          Success
+        </h4>
+      </div>
+      <div>
+        <span>{{successBody}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4 mb-4">
+    <div class="text-danger w" *ngIf="errorBody">
+      <div>
+        <h4>
+          Error
+        </h4>
+      </div>
+      <div>
+        <span>{{errorBody}}</span>
+      </div>
+    </div>
+  </div>
+</div>
