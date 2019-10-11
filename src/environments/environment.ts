@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://3.15.122.128'
+  apiUrl: 'https://ws2.exrates.me/'
 };
 
 /*
